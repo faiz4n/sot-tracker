@@ -119,14 +119,7 @@ export function FileUpload({ onDataParsed, onAnalyzeClick }: FileUploadProps) {
           </div>
           <div className="space-y-4">
             <p className="text-muted-foreground">Drag and drop your battery-report.html file here, or</p>
-            <label htmlFor="file-upload">
-              <Button
-                variant="outline"
-                size="lg"
-                className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors bg-transparent"
-              >
-                Choose File
-              </Button>
+            <div>
               <input
                 id="file-upload"
                 type="file"
@@ -134,7 +127,17 @@ export function FileUpload({ onDataParsed, onAnalyzeClick }: FileUploadProps) {
                 onChange={handleFileUpload}
                 className="hidden"
               />
-            </label>
+              <label htmlFor="file-upload">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors bg-transparent"
+                  asChild
+                >
+                  <span>Choose File</span>
+                </Button>
+              </label>
+            </div>
           </div>
           {file && (
             <div className="mt-6 p-4 bg-primary/10 border border-primary/20 rounded-lg">
